@@ -1,3 +1,4 @@
+import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 
 class EquatableTesting extends StatefulWidget {
@@ -20,9 +21,12 @@ class _EquatableTestingState extends State<EquatableTesting> {
   }
 }
 
-class Person{
+class Person extends Equatable{
   final String name;
   final int age;
 
   const Person({required this.name, required this.age});
+
+  @override
+  List<Object?> get props => [name, age];
 }
